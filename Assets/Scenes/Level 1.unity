@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028364, g: 0.22571364, b: 0.306922, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028396, g: 0.22571427, b: 0.30692327, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1861,7 +1861,7 @@ PrefabInstance:
       objectReference: {fileID: 1703913353}
     - target: {fileID: 513806817777466112, guid: 52e0fc2d8345aa4408d762b3ee066143, type: 3}
       propertyPath: maxMotorTorque
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 513806817777466113, guid: 52e0fc2d8345aa4408d762b3ee066143, type: 3}
       propertyPath: m_Name
