@@ -5,46 +5,56 @@ using TMPro;
 
 public class Controller : MonoBehaviour
 {
-    // I really dont fucking know what I did here
+    // Reference Comments.cs Line 8
     [SerializeField] TextMeshProUGUI timer;
+    [SerializeField] GameObject[] Stars;
 
-    float fltMilliseconds;
+    int intStarCount = 3;
+    
+    // Reference Comments.cs Line 9
+    float fltTime = 0f;
+
+    // Reference Comments.cs Line 10
     float fltSeconds;
-    int fltMinutes;
-
-    string formatMilliseconds = "00";
-    string formatSeconds = "00";
+    float fltMinutes;
+    float fltHours;
 
     void Start()
     {
-        fltMilliseconds = 0f;
-        fltSeconds = 50f;
-        fltMinutes = 0;
+        // Reference Comments.cs Line 11
+        fltTime = 0f;
+        fltSeconds = 0f;
+        fltMinutes = 0f;
+        fltHours = 0f;
     }
 
     void Update()
     {
+        // Reference Comments.cs Line 12
+        fltTime += Time.deltaTime;
+
+        // Reference Comments.cs Line 13
+        fltSeconds = fltTime % 60;
+        fltMinutes = fltTime / 60;
+        fltHours = fltTime / 3600;
+
+        // Reference Comments.cs Line 14
         SetTimerTime();
-        fltSeconds += Time.deltaTime;
+
+        UpdateStarCount();
     }
 
     void SetTimerTime()
     {
-        // If 59 seconds has passed
-        if (fltSeconds >= 59f) {
-            // Add one to minutes variable
-            fltMinutes++;
-            // Reset seconds counter
-            fltSeconds = 0f;
-        }
-        
-        formatSeconds = fltSeconds.ToString().Split('.')[0];
+        // Reference Comments.cs Line 15
+        timer.text = $"{(int)fltHours}:{(int)fltMinutes}:{(int)fltSeconds}";
+    }
 
-        if (fltSeconds.ToString().Split('.').Length >= 2) {
-            formatMilliseconds = Mathf.Round(int.Parse(fltSeconds.ToString().Split('.')[1]) / 1000).ToString();
-        }
-
-        string formatedTime = string.Format("{0}:{1}:{2}", fltMinutes, formatSeconds, formatMilliseconds);
-        timer.text = formatedTime;
+    void UpdateStarCount()
+    {
+        // for (int i = 0; i < Stars.Length; i++)
+        // {
+        //     Stars[i].SetActive(false);
+        // }
     }
 }

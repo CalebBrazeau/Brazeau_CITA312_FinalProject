@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Powerup : MonoBehaviour
 {
-    // Variable that stores the different types of powerups
+    // Reference Comments.cs Line 18
     [SerializeField] string[] powerupTypes;
 
     // Variable to store the objects powerup type

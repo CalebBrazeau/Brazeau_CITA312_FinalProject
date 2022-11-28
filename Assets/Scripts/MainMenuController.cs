@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    [SerializeField] GameObject SettingsMenu;
+    [SerializeField] GameObject MainMenu;
+
+    void Start()
+    {
+        SettingsMenu.SetActive(false);
+        MainMenu.SetActive(true);
+    }
+
     // Method to handle the button click and load the corrisponding scene
     public void ClickPlayButton()
     {
@@ -14,8 +23,8 @@ public class MainMenuController : MonoBehaviour
     // Method to display the settings menu
     public void ClickSettingsButton()
     {
-        Debug.Log("Settings Menu");
-        // SceneManager.LoadScene("LevelSelect");
+        SettingsMenu.SetActive(true);
+        MainMenu.SetActive(false);
     }
 
     // Method to quit the game
@@ -23,5 +32,11 @@ public class MainMenuController : MonoBehaviour
     {
         // Quits the application
         Application.Quit();
+    }
+
+    public void ClickSettingsBackButton()
+    {
+        SettingsMenu.SetActive(false);
+        MainMenu.SetActive(true);
     }
 }
