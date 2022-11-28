@@ -5,6 +5,7 @@ using TMPro;
 
 public class Controller : MonoBehaviour
 {
+    // I really dont fucking know what I did here
     [SerializeField] TextMeshProUGUI timer;
 
     float fltMilliseconds;

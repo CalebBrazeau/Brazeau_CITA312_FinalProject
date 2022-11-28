@@ -14,41 +14,28 @@ public class SimpleCarController : MonoBehaviour {
     public List<AxleInfo> axleInfos; 
     public float maxMotorTorque;
     public float maxSteeringAngle;
-
-    // finds the corresponding visual wheel
-    // correctly applies the transform
-    public void ApplyLocalPositionToVisuals(WheelCollider collider)
-    {
-        if (collider.transform.childCount == 0) {
-            return;
-        }
-     
-        Transform visualWheel = collider.transform.GetChild(0);
-     
-        Vector3 position;
-        Quaternion rotation;
-        collider.GetWorldPose(out position, out rotation);
-     
-        visualWheel.transform.position = position;
-        visualWheel.transform.rotation = rotation;
-    }
      
     public void FixedUpdate()
     {
+        // Get vertical input for forward/backward movement
         float motor = maxMotorTorque * Input.GetAxis("Vertical");
+        // Get horizontal input for turning movement
         float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
      
+        // Pretty self explanitory
         foreach (AxleInfo axleInfo in axleInfos) {
+            // If there is steering input
             if (axleInfo.steering) {
+                // Apply steering angle to both wheels
                 axleInfo.leftWheel.steerAngle = steering;
                 axleInfo.rightWheel.steerAngle = steering;
             }
+            // If there is motor input
             if (axleInfo.motor) {
+                // Apply torque to both wheels
                 axleInfo.leftWheel.motorTorque = motor;
                 axleInfo.rightWheel.motorTorque = motor;
             }
-            ApplyLocalPositionToVisuals(axleInfo.leftWheel);
-            ApplyLocalPositionToVisuals(axleInfo.rightWheel);
         }
     }
 }

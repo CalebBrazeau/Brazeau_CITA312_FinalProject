@@ -5,18 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelectController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Methods to handle button clicks and load the corrisponding level
     public void ClickLevel1Button()
     {
         SceneManager.LoadScene("Level 1");
