@@ -325,7 +325,7 @@ Transform:
   - {fileID: 1204964878}
   - {fileID: 1428828241}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &191672426
 GameObject:
@@ -796,7 +796,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: 0, z: 0}
 --- !u!1 &741404657
 GameObject:
@@ -2457,7 +2457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308211358113924769, guid: 95cac94d19bd6164a866141ede343558, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2308211358113924769, guid: 95cac94d19bd6164a866141ede343558, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2626,6 +2626,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0178604203ef3e4a97d80a975d9b273, type: 3}
+--- !u!114 &5526806573649726625 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5526806572057320466, guid: f0178604203ef3e4a97d80a975d9b273, type: 3}
+  m_PrefabInstance: {fileID: 5526806573649726624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791bfb5d4f6a1174cbc61d8d2479d448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7468697292291005156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2633,6 +2644,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7468697291489149588, guid: 2ed98331903c81d4f8ff5672919940a8, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 5526806573649726625}
+    - target: {fileID: 7468697291489149588, guid: 2ed98331903c81d4f8ff5672919940a8, type: 3}
+      propertyPath: strNextLevel
+      value: Level 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7468697291970665544, guid: 2ed98331903c81d4f8ff5672919940a8, type: 3}
       propertyPath: m_RootOrder
       value: 10

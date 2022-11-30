@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Text.RegularExpressions;
 
 public class HandleFinish : MonoBehaviour
 {
     [SerializeField] string strNextLevel;
+    [SerializeField] Controller controller;
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,6 +25,15 @@ public class HandleFinish : MonoBehaviour
             SceneManager.LoadScene("LevelSelect");
         }
 
+        SaveInformation();
+        
         SceneManager.LoadScene(strNextLevel);
+    }
+
+    void SaveInformation() {
+        string strCurrentSceneName = Regex.Replace(SceneManager.GetActiveScene().name, "\\s+", "");
+        PlayerPrefs.SetInt(strCurrentSceneName + "StarCount", controller.GetStarCount());     
+        PlayerPrefs.SetFloat(strCurrentSceneName + "FinishTime", controller.GetTime());
+        PlayerPrefs.Save();
     }
 }

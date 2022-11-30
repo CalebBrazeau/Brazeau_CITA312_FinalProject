@@ -60,4 +60,14 @@ public class Controller : MonoBehaviour
     {
         Stars[intStarCount].SetActive(false);
     }
+
+    public int GetStarCount()
+    {
+        return intStarCount;    
+    }
+
+    public float GetTime()
+    {
+        return fltTime;        
+    }
 }
