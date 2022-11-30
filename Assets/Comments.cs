@@ -76,5 +76,48 @@ public class Comments : MonoBehaviour
     // If both keys have been pressed
     // Destroy the parent object, which is the "Prompt" object (This could be moved to line 38 and eliminated but I already made the comment so I am not changing it)
 
+    /***** Scripts/Controller.cs *****/
+    // Variable to store the Text Mesh Pro GUI timer
+    // Variable to store all of the Star objects in the GUI
+    // Variable to store the one, two, and three star times of a track
+    // Variable to store the star count of a track
+    // Variable to store the time elapsed in a track
+    // Reset the time variable
+    // Increase the time variable by the delta time every frame
+    // Call to set timer time method to update the displayed time
+    // Variables to calculate and store the time in seconds, minutes, and hours
+    // Set the text mesh pro variables text to a formated time
+    // If the current time is greater than the tracks two star time and the star count is equal to two
+    // Update the star count
+    // Decrement the star count variable by one
+    // If the current time is greater than the tracks One star time and the star count is equal to one
+    // Update the star count
+    // Decrement the star count variable by one
+    // If the current time is greater than the tracks zero star time and the star count is equal to zero
+    // Update the star count
+    // Method to update the number of displayed stars
+    // Deactivate a star by using the star count variable
+    // Method to return the intStarCount variable
+    // Returns the intStarCount variable
+    // Method to return the fltTime variable
+    // Returns the fltTime variable
+
+    /***** Scripts/HandleFinish.cs *****/
+    // Variable to store the name of the next level (this is a bad way to do it, but I am lazy)
+    // Variable to store the controller class of the controller object
+    // If the collided object has the player tag
+    // Call the Finish method to handle the player finishing the track
+    // Method to handle the finish event
+    // If the next level string is null
+    // Load the level select scene
+    // Call to save information to save the star count and time
+    // Load the next level based on the next level string (Bad but lazy)
+    // Method to save the star count and track time in the playerprefs file
+    // Get the active scene name and remove all whitespace using regex
+    // Using the key <levelname> + "StarCount" set an integer of the star count of the level
+    // Using the key <levelname> + "FinishTime" set a float of the track time 
+    // Write the new playerprefs to disk
+
+    /***** Scripts/LevelSelectDisplay.cs *****/
 
 }
