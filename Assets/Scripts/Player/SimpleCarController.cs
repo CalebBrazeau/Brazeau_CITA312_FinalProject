@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class AxleInfo {
@@ -14,7 +15,15 @@ public class SimpleCarController : MonoBehaviour {
     public List<AxleInfo> axleInfos; 
     public float maxMotorTorque;
     public float maxSteeringAngle;
-     
+    
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("LevelSelect");
+        }
+    }
+
     public void FixedUpdate()
     {
         // Get vertical input for forward/backward movement

@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HandleFinish : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
+    [SerializeField] string strNextLevel;
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,6 +19,10 @@ public class HandleFinish : MonoBehaviour
     // Method to handle the finish event
     void Finish()
     {
-        Debug.Log("I finished on your mom");
+        if (strNextLevel != null) {
+            SceneManager.LoadScene("LevelSelect");
+        }
+
+        SceneManager.LoadScene(strNextLevel);
     }
 }

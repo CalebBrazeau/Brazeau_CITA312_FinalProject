@@ -7,11 +7,12 @@ public class Oscillator : MonoBehaviour
     Vector3 startingPosition;
     [SerializeField] Vector3 movementVector;
     float movementFactor;
-    [SerializeField] float period = 2f;
+    float period;
 
     // Start is called before the first frame update
     void Start()
     {
+        period = Random.Range(2f, 5f);
         // Set the starting position to the objects current position
         startingPosition = transform.position;
     }

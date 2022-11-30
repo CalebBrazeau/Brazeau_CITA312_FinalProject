@@ -9,23 +9,18 @@ public class Controller : MonoBehaviour
     [SerializeField] TextMeshProUGUI timer;
     [SerializeField] GameObject[] Stars;
 
-    int intStarCount = 3;
-    
+    [SerializeField] int intTrackTwoStar;
+    [SerializeField] int intTrackOneStar;
+    [SerializeField] int intTrackZeroStar;
+    int intStarCount = 2;
+
     // Reference Comments.cs Line 9
     float fltTime = 0f;
-
-    // Reference Comments.cs Line 10
-    float fltSeconds;
-    float fltMinutes;
-    float fltHours;
 
     void Start()
     {
         // Reference Comments.cs Line 11
         fltTime = 0f;
-        fltSeconds = 0f;
-        fltMinutes = 0f;
-        fltHours = 0f;
     }
 
     void Update()
@@ -33,28 +28,36 @@ public class Controller : MonoBehaviour
         // Reference Comments.cs Line 12
         fltTime += Time.deltaTime;
 
-        // Reference Comments.cs Line 13
-        fltSeconds = fltTime % 60;
-        fltMinutes = fltTime / 60;
-        fltHours = fltTime / 3600;
-
         // Reference Comments.cs Line 14
         SetTimerTime();
-
-        UpdateStarCount();
     }
 
     void SetTimerTime()
     {
+        // Reference Comments.cs Line 13
+        float fltSeconds = fltTime % 60;
+        float fltMinutes = fltTime / 60;
+        float fltHours = fltTime / 3600;
+
         // Reference Comments.cs Line 15
         timer.text = $"{(int)fltHours}:{(int)fltMinutes}:{(int)fltSeconds}";
+
+        if (fltTime > intTrackTwoStar && intStarCount == 2) {
+            UpdateStarCount();   
+            intStarCount--;
+        }
+        if (fltTime > intTrackOneStar && intStarCount == 1) {
+            UpdateStarCount();   
+            intStarCount--;
+        }
+        if (fltTime > intTrackZeroStar && intStarCount == 0) {
+            UpdateStarCount();
+        }
+        
     }
 
     void UpdateStarCount()
     {
-        // for (int i = 0; i < Stars.Length; i++)
-        // {
-        //     Stars[i].SetActive(false);
-        // }
+        Stars[intStarCount].SetActive(false);
     }
 }
