@@ -22,6 +22,10 @@ public class SimpleCarController : MonoBehaviour {
         {
             SceneManager.LoadScene("LevelSelect");
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void FixedUpdate()
