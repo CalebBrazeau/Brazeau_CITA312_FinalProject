@@ -119,5 +119,74 @@ public class Comments : MonoBehaviour
     // Write the new playerprefs to disk
 
     /***** Scripts/LevelSelectDisplay.cs *****/
+    // Variable to store all of the Star objects in the level display
+    // Variable to store the finish time text from the GUI
+    // Get the star count of the level from the player preferences using the name of the object as part of the key
+    // Get the finish time of the level from the player preferences using the name of the object as part of the key
+    // Display the Star Count
+    // Display the Finish Time
+    // Method to display the number of stars received
+    // If there are no stars for a level return
+    // Loop through for each number of stars
+    // Set the Star object to active to display it in the GUI
+    // Method to display the finish time of a level
+    // If the finish time is greater than equal to or less than 0 return
+    // Divide the finish time by 60 and use the remainder for seconds
+    // Divide the finish time by 60 for minutes
+    // Divide the finish time by 3600 for hours
+    // Set the text in the GUI to the calculate times casting each to an integer to remove any decimal places
 
+    /***** Scripts/Oscillator.cs *****/
+    // Variable to store the starting position of the object
+    // Variable to store the axis' the object should move on
+    // Variable to store the amplitude of the movement idfk
+    // Variable to store the period of time the object oscillates over
+    // Choose a random period of time the object oscillates over
+    // Set the starting position to the objects current position
+    // If the fltPeriod is less than or equal to the smallest possible float return
+    // Continually growing over time
+    // Constant value of 6.28
+    // Going from -1 to 1
+    // Recalculated to go from 0 to 1
+    // Calculate the offset
+    // Set the position of the object to its starting position plus the offset to move it
+
+    /***** Scripts/Powerup.cs *****/
+    // Powerups dont do anything but print to the console then destroy themselves
+    // Variable to store the types of powerups
+    // Variable to store the objects powerup type
+    // Choose powerup from powerup array
+    // On collision apply affect
+    // Check the powerup type of the object and apply the effect
+    // Apply speed powerup
+    // Apply jump powerup
+    // Apply grip powerup
+    // Default to nothing so it does not break, it does nothing anyway
+    // Destroy the powerup object so it cant be used multiple times
+
+    /***** Scripts/Resetinator.cs *****/
+    // If the collided object is the player
+    // Get the current scene/level index
+    // Reload the current scene/level
+
+    /***** Scripts/SimpleCarController.cs *****/
+    // https://docs.unity3d.com/Manual/WheelColliderTutorial.html (Everything except for Update() is from here)
+    // Left wheel collider
+    // Right wheel collider
+    // Is this wheel attached to motor?
+    // Does this wheel apply steer angle?
+    // The information about each individual axle
+    // Maximum torque the motor can apply to wheel
+    // Maximum steer angle the wheel can have
+    // If the Escape key is down
+    // Load the level select scene
+    // If the R key is down
+    // Get and reload the current scene
+    // Get vertical input for forward/backward movement
+    // Get horizontal input for turning movement
+    // Pretty self explanitory
+    // If there is steering input
+    // Apply steering angle to both wheels
+    // If there is motor input
+    // Apply torque to both wheels
 }

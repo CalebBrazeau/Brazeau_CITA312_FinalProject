@@ -4,33 +4,42 @@ using UnityEngine;
 
 public class Oscillator : MonoBehaviour
 {
+    // Reference Comments.cs Line 140
     Vector3 startingPosition;
+    // Reference Comments.cs Line 141
     [SerializeField] Vector3 movementVector;
-    float movementFactor;
-    float period;
+    // Reference Comments.cs Line 142
+    float fltMovementFactor;
+    // Reference Comments.cs Line 143
+    float fltPeriod;
 
-    // Start is called before the first frame update
     void Start()
     {
-        period = Random.Range(2f, 5f);
-        // Set the starting position to the objects current position
+        // Reference Comments.cs Line 144
+        fltPeriod = Random.Range(2f, 5f);
+        // Reference Comments.cs Line 145
         startingPosition = transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // If the period is less than or equal to the smallest possible float return
-        if (period <= Mathf.Epsilon) { return; }
+        // Reference Comments.cs Line 146
+        if (fltPeriod <= Mathf.Epsilon) { return; }
 
-        float fltCycles = Time.time / period; // Continually growing over time
+        // Reference Comments.cs Line 147
+        float fltCycles = Time.time / fltPeriod;
         
-        const float FLTTAU = Mathf.PI * 2; // Constant value of 6.28
-        float fltRawSinWave = Mathf.Sin(fltCycles * FLTTAU); // Going from -1 to 1
+        // Reference Comments.cs Line 148
+        const float FLTTAU = Mathf.PI * 2;
+        // Reference Comments.cs Line 149
+        float fltRawSinWave = Mathf.Sin(fltCycles * FLTTAU);
 
-        movementFactor = (fltRawSinWave + 1f) / 2f; // Recalculated to go from 0 to 1
+        // Reference Comments.cs Line 150
+        fltMovementFactor = (fltRawSinWave + 1f) / 2f;
 
-        Vector3 offset = movementVector * movementFactor;
+        // Reference Comments.cs Line 151
+        Vector3 offset = movementVector * fltMovementFactor;
+        // Reference Comments.cs Line 152
         transform.position = startingPosition + offset;
     }
 }

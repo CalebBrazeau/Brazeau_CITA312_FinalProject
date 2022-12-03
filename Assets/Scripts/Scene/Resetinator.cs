@@ -7,12 +7,13 @@ public class Resetinator : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        // If the collided object is the player
+        // Reference Comments.cs Line 168
         if (other.tag == "Player")
         {
-            // Get the current scene/level index
+            // Reference Comments.cs Line 169
             int intCurrentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            // Reload the current scene/level
+            
+            // Reference Comments.cs Line 170
             SceneManager.LoadScene(intCurrentSceneIndex);
         }
     }
